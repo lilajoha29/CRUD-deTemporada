@@ -8,8 +8,9 @@ const getAllWorkouts = () => {
 const allWorkouts = () => {
     return;
 };
-const getOneWorkout = () => {
-    return;
+const getOneWorkout = (workourId) => {
+    const workout = Workout.getOneWorkout(workourId);
+    return workout;
 };
 const createNewWorkout = (newWorkout) => {
     const workourtToInsert = {
@@ -21,11 +22,12 @@ const createNewWorkout = (newWorkout) => {
     const createdWorkout = Workout.createNewWorkout(workourtToInsert);
     return createdWorkout;
 };
-const updateOneWorkout = () => {
-    return;
+const updateOneWorkout = (workourId, changes) => {
+    const updatedWorkout = Workout.updateOneWorkout(workourId, changes);
+    return updatedWorkout;
 };
-const deleteOneWorkout = () => {
-    return;
+const deleteOneWorkout = (workourId) => {
+    Workout.deleteOneWorkout(workourId);
 };
 
 module.exports = {
