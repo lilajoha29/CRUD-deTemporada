@@ -1,6 +1,6 @@
 const DB = require('./db.json')
 const {saveToDatabase} = require('./utils')
-
+// const workout = require("../models/clienteModel");
 
 const getAllWorkouts = () => {
     return DB.workouts;

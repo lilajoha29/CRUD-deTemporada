@@ -1,5 +1,5 @@
 const workourtService = require("../services/workoutService");
-
+// const workout = require("../models/clienteModel");
 
 const getAllWorkouts = (req, res) => {
     const allWorkouts = workourtService.getAllWorkouts(); 
