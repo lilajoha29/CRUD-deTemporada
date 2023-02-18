@@ -19,7 +19,9 @@ const createdNewWorkout = (newWorkout) => {
     
 
     if (isAlreadyAdded) {
-        return;
+        throw {
+            status
+        }
     }
     DB.workouts.push(newWorkout);
     saveToDatabase(DB);
@@ -53,7 +55,7 @@ const deleteOneWorkout = (workourId) => {
     
     DB.workouts.splice(indexForDelete, 1);
     saveToDatabase(DB);
-    
+
 }
 
 

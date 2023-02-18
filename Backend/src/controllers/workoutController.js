@@ -25,20 +25,22 @@ const createNewWorkout = (req, res) => {
 
     if (
         !body.name ||
-        !body.mode ||
-        !body.equipment ||
-        !body.exercises ||
-        !body.trainerTips
+        !body.contact ||
+        !body.address 
     ) {
-        return;
+        res.status(400)
+            .send({
+                status: "FAILED",
+                data: {
+                error: "one of the following keys is missing or is empty in request body: 'name' 'contact' or 'address'" 
+            }
+        });
     }
 
     const newWorkouts = {
         name: body.name,
-        mode: body.mode,
-        equipment: body.equipment,
-        exercises: body.exercises,
-        trainerTips: body.trainerTips,
+        contact: body.contact,
+        address: body.address
     };
 
     const createdWorkout = workourtService.createNewWorkout(newWorkouts);
