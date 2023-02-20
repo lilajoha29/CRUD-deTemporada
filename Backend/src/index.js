@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 // conexion
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 app.use("/clients", clientsRoutes);
 
@@ -19,9 +20,11 @@ app.use("/clients", clientsRoutes);
 const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true };
 
 // app.use("/api/v1/Workouts", v1WorkoutRouter);
+mongoose.set('strictQuery', true);
 
 // mongodb
-mongoose.connect("mongodb://127.0.0.1:27017/pedidos", connectionOptions)
+// mongoose.connect("mongodb://127.0.0.1:27017/pedidos", connectionOptions)
+mongoose.connect("mongodb+srv://lilyjohana:cuarteto.F29@cluster0.7qysvaj.mongodb.net/test", connectionOptions)
     .then(() => console.log("Connected successfully"))
     .catch((err) => console.error(err));
 

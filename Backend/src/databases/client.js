@@ -64,8 +64,8 @@ const updateOneClient = (clientId, changes) => {
         
     };
 
-    DB.clients[indexForUpdated] = updatedClient;
-    saveToDatabase(DB);
+    DBMongo.clients[indexForUpdated] = updatedClient;
+    saveToDatabase(DBMongo);
     return updatedClient;
 };
 
